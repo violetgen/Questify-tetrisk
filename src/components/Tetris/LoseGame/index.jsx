@@ -161,7 +161,7 @@ const LoseGame = ({
               onClick={() => {
                 dispatch(setQuestState({ questState: false }));
                 window.open(
-                  "https://questify-app-dashboard-testing.web.app/quests"
+                  "https://app.questify.gg/quests"
                 );
               }}
             >

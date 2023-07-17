@@ -22,7 +22,7 @@ const Footer = () => {
       <div
         className="wallet-adapter-button fixed left-4 bottom-4 align-text-center flex flex-row"
         onClick={() =>
-          window.open(" https://questify-app-dashboard-testing.web.app")
+          window.open("https://app.questify.gg")
         }
       >
         <img src="images/Backward.png" style={{ width: "25px" }}></img>
