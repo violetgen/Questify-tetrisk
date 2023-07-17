@@ -359,22 +359,19 @@ const Stage = ({
           setFlag(result.data.data.playCount.tetris);
           setShow(true);
           console.log("😁", result.data.data);
-          dispatch(
-            setQuestState({
-              questState:
-                result.data.data.achievedQuests.tetris.length ===
-                  result.data.data.claimedQuests.tetris.length &&
-                result.data.data.achievedQuests.tetris.every(
-                  (value, index) =>
-                    value ===
-                    result.data.data.claimedQuests.tetris[index]
-                )
-                  ? false
-                  : true,
-            })
-          );
-
-          console.log("❤️", questState);
+          let quests = false;
+          const max = [1, 7, 10, 1, 1, 1, 1];
+          for (let i = 0; i < 7; i++) {
+            if (
+              result.data.data.claimedQuests.tetris[i] === 0 &&
+              result.data.data.achievedQuests.tetris[i] === max[i]
+            ) {
+              quests = true;
+              break;
+            }
+          }
+          dispatch(setQuestState({ questState: quests }));
+          console.log("❤️", quests);
         });
     }
   }, [lose]);
